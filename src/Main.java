@@ -39,7 +39,7 @@ public class Main {
 
     // 3 Задача
 
-    public static void deliveryCheck(int deliveryDistance) {
+    public static int deliveryCheck(int deliveryDistance) {
         int deliveryTime = 0;
         if (deliveryDistance < 21) {
             deliveryTime = 1;
@@ -48,11 +48,8 @@ public class Main {
         } else if (deliveryDistance < 101) {
             deliveryTime = 3;
         }
-        if (deliveryDistance < 101) {
-            System.out.println("Потребуется дней: " + deliveryTime);
-        } else {
-            System.out.println("Доставка недоступна");
-        }
+
+        return deliveryTime;
     }
 
 
@@ -70,7 +67,13 @@ public class Main {
 
         // 3 Задача
         printQuest(3);
-        deliveryCheck(105);
+        int time = deliveryCheck(101);
+        if (time != 0) {
+            System.out.println("Потребуется дней: " + time);
+        } else {
+            System.out.println("Доставка недоступна");
+        }
+
 
     }
 
